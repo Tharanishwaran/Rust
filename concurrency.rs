@@ -8,7 +8,7 @@ fn concurrency() {
         let (data, tx) = (Arc::clone(&data), tx.clone());
         thread::spawn(move || {
             let mut data = data.lock().unwrap();
-            data.push(4); // Modify the shared data
+            data.push(4); 
             tx.send(()).unwrap();
         });
     }
